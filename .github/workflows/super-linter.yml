@@ -5,14 +5,14 @@ on: push
 jobs:
   super-lint:
     name: Lint Code Base
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
 
-    steps: 
-      -name: checkout
-       uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      -name: Super-Linter
-       uses: github/super-linter@v4.9.5
-       env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: {{secrets.GITHUB_TOKEN}}
+      - name: Super-Linter
+        uses: github/super-linter@v4.9.5
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
